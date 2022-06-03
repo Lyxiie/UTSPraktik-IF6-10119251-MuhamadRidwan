@@ -6,13 +6,354 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    //Nama: Muhamad Ridwan-->
+<!--    //Kelas : IF6-->
+<!--    //NIM : 10119251-->
+<!--    //Tgl Pengerjaan : 03 Juni 2022-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="360dp"
+        android:layout_height="1193dp"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/jam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_jam"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="17.17dp"
+            android:layout_marginLeft="28.45dp"
+            />
+        <ImageView
+            android:id="@+id/batre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_batre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jam"
+            app:layout_constraintBottom_toBottomOf="@+id/jam"
+            android:layout_marginRight="19dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_signal"
+            app:layout_constraintEnd_toStartOf="@+id/batre"
+            app:layout_constraintTop_toTopOf="@+id/batre"
+            android:layout_marginRight="8dp"/>
+
+        <ImageView
+            android:id="@+id/panah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_panahkiri"
+            app:layout_constraintTop_toBottomOf="@+id/jam"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="18.26dp"
+            android:layout_marginTop="24.73dp"/>
+
+        <TextView
+            android:id="@+id/fpengisian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Form Pengisian Data"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/panah"
+            app:layout_constraintTop_toBottomOf="@+id/panah"
+            android:layout_marginTop="35.98dp"/>
+
+        <ImageView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_groupinfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fpengisian"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/txt_jenistes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/info"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Jenis Tes"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_jenistes"
+            app:layout_constraintTop_toBottomOf="@+id/info"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <RadioGroup
+            android:id="@+id/radio_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_jenistes"
+            app:layout_constraintStart_toStartOf="@+id/txt_jenistes"
+            android:checkedButton="@id/rapid"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/rapid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rapid Antigen"/>
+            <RadioButton
+                android:id="@+id/pcr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PCR"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_tglkonfirmasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/radio_1"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Tanggal Terkofirmasi"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_tglkonfirmasi"
+            app:layout_constraintTop_toBottomOf="@+id/radio_1"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <EditText
+            android:id="@+id/isiantgl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tglkonfirmasi"
+            app:layout_constraintStart_toStartOf="@+id/txt_tglkonfirmasi"
+            android:padding="18.26dp"
+            android:hint="Pilih Tanggal"
+            />
+
+        <TextView
+            android:id="@+id/txt_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIK"
+            app:layout_constraintTop_toBottomOf="@+id/isiantgl"
+            app:layout_constraintStart_toStartOf="@+id/txt_tglkonfirmasi"
+            android:textSize="12dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/isiannik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nik"
+            app:layout_constraintStart_toStartOf="@+id/txt_tglkonfirmasi"
+            android:padding="18.26dp"
+            android:hint="Masukan NIK"/>
+
+        <TextView
+            android:id="@+id/txt_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/isiannik"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Nama"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_nama"
+            app:layout_constraintTop_toBottomOf="@+id/isiannik"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <EditText
+            android:id="@+id/isiannama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nama"
+            app:layout_constraintStart_toStartOf="@+id/txt_tglkonfirmasi"
+            android:padding="18.26dp"
+            android:hint="Masukan nama"/>
+
+        <TextView
+            android:id="@+id/txt_tgllahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/isiannama"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Tanggal Lahir"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_tgllahir"
+            app:layout_constraintTop_toBottomOf="@+id/isiannama"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <EditText
+            android:id="@+id/isiantgl_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tgllahir"
+            app:layout_constraintStart_toStartOf="@+id/txt_tglkonfirmasi"
+            android:padding="18.26dp"
+            android:hint="Pilih Tanggal"
+            />
+
+        <TextView
+            android:id="@+id/txt_jnskelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/isiantgl_2"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Jenis Kelamin"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_jnskelamin"
+            app:layout_constraintTop_toBottomOf="@+id/isiantgl_2"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <RadioGroup
+            android:id="@+id/radio_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_jnskelamin"
+            app:layout_constraintStart_toStartOf="@+id/txt_jenistes"
+            android:checkedButton="@id/laki"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/laki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laki - laki"/>
+            <RadioButton
+                android:id="@+id/perempuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perempuan"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_hubungan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/radio_2"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:text="Hubungan Dengan Anda"/>
+
+        <TextView
+            android:id="@+id/txt_harusisi_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/txt_hubungan"
+            app:layout_constraintTop_toBottomOf="@+id/radio_2"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:textColor="#16A75C"
+            android:text="• Harus Diisi"/>
+
+        <RadioGroup
+            android:id="@+id/radio_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_hubungan"
+            app:layout_constraintStart_toStartOf="@+id/txt_jenistes"
+            android:checkedButton="@id/orangtua"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/orangtua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orangtua"/>
+            <RadioButton
+                android:id="@+id/suamiistri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suami/Istri"/>
+            <RadioButton
+                android:id="@+id/anak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anak"/>
+            <RadioButton
+                android:id="@+id/kerabat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kerabat Lainnya"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/radio_3"
+            app:layout_constraintStart_toStartOf="@id/radio_3"
+            android:text="Dengan ini saya menyetujui bahwa data yang saya isikan adalah benar"
+            android:textSize="11dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tombolselanjutnya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_goneMarginTop="32dp"
+            style="@style/btn_style"
+            android:text="Selanjutnya"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>
